@@ -1,4 +1,4 @@
-/*#include "UserInfo.h"
+#include "UserInfo.h"
 #include <stdexcept>
 
 void userInfo::Display(const userInfo& userinfo) {
@@ -10,9 +10,9 @@ void userInfo::Display(const userInfo& userinfo) {
         vehicle = new nonFreeDutyPrice(userinfo.Location, userinfo.Country, userinfo.Type, userinfo.Price, userinfo.Capacity);
     }
 
-    Checking if the vehicle pointer is not null, indicating successful memory allocation. or not null.
+    /*Checking if the vehicle pointer is not null, indicating successful memory allocation. or not null.
     nullptr represents a null pointer, indicating that the pointer does not point to any valid memory 
-    location.
+    location.*/
     if(vehicle!= nullptr) {
         vehicle->getDetails(); 
         delete vehicle; 
@@ -26,4 +26,4 @@ void userInfo::Display(const userInfo& userinfo) {
     std::cout << "Car Type: " << userinfo.carType << std::endl;
     std::cout << "Price: $" << userinfo.Price << std::endl;
     std::cout << "Capacity: " << userinfo.Capacity << std::endl;
-}*/
+}

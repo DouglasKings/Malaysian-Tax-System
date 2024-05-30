@@ -1,4 +1,4 @@
-/*#ifndef UserInfo_H
+#ifndef UserInfo_H
 #define UserInfo_H
 
 #include "Vehicle.h"
@@ -18,13 +18,13 @@ public:
           Price(Price),
           Capacity(Capacity) {} 
 
-     friend void Display(const userInfo& userinfo); 
+     void Display(const userInfo& userinfo); 
 
 };
 
-#endif */
+#endif 
 
-#ifndef UserInfo_H
+/*#ifndef UserInfo_H
 #define UserInfo_H
 
 #include <iostream>
@@ -75,4 +75,4 @@ public:
     }
 };
 
-#endif
+#endif*/

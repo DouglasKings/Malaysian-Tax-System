@@ -5,11 +5,11 @@
 
 class Vehicle{
     protected:
-        std::string Type, countryOfOrigin;
+        int Type, countryOfOrigin;
         double manufacturerPrice, engineCapacity;
 
     public:
-        Vehicle(const std::string Type, const std::string Country, double Price, double Capacity)
+        Vehicle(int Type, int Country, double Price, double Capacity)
             : Type(Type), countryOfOrigin(Country), manufacturerPrice(Price), engineCapacity(Capacity){}
 
             

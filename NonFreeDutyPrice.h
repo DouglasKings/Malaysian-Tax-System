@@ -9,7 +9,7 @@ class nonFreeDutyPrice : freeDutyPrice{
         int Location;
 
     public:
-        nonFreeDutyPrice(std::string Type, std::string Country, double Price, double Capacity, double exciseDuty, double importDuty, int Location)
+        nonFreeDutyPrice(int Type, int Country, double Price, double Capacity, double exciseDuty, double importDuty, int Location)
             :freeDutyPrice(Type, Country, Price, Capacity, exciseDuty, Location), importDutyRate(importDuty){}
 
             ~nonFreeDutyPrice() override = default;

@@ -9,7 +9,7 @@ class freeDutyPrice : Vehicle{
         int Location;
 
     public:
-        freeDutyPrice(std::string Type, std::string Country, double Price, double Capacity, double exciseDuty, int Location)
+        freeDutyPrice(int Type, int Country, double Price, double Capacity, double exciseDuty, int Location)
             :Vehicle(Type, Country, Price, Capacity), exciseDutyRate(exciseDuty), Location(Location){}
 
             ~freeDutyPrice() override = default;
