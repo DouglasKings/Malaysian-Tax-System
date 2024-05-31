@@ -3,21 +3,24 @@
 
 #include "FreeDutyPrice.h"
 
-class nonFreeDutyPrice : freeDutyPrice{
-    private:
-        double importDutyRate;
-        int Location;
+class nonFreeDutyPrice : public freeDutyPrice {
+public:
+    nonFreeDutyPrice(int Type, int Country, double Price, double Capacity, double exciseDuty, int Location, int option)
+        : freeDutyPrice(Type, Country, Price, Capacity, exciseDuty, Location) {
+            setAreaType(option);
+        }
 
-    public:
-        nonFreeDutyPrice(int Type, int Country, double Price, double Capacity, double exciseDuty, double importDuty, int Location)
-            :freeDutyPrice(Type, Country, Price, Capacity, exciseDuty, Location), importDutyRate(importDuty){}
+    ~nonFreeDutyPrice() override = default;
 
-            ~nonFreeDutyPrice() override = default;
-            void getDetails() override;
+    void getDetails() override;
 
-            double calculateImportDuty();
-            double getFinalPrice();
+    void setAreaType(int option);
 
+    double calculateImportDuty();
+
+    double getFinalPrice();
+
+    void someOtherMethod();
 };
 
 #endif

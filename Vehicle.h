@@ -2,24 +2,29 @@
 #define Vehicle_H
 
 #include <iostream>
+#include <stdexcept>
 
 class Vehicle{
     protected:
-        int Type, countryOfOrigin;
+        int Type, countryOfOrigin, areaType;
         double manufacturerPrice, engineCapacity;
 
     public:
         Vehicle(int Type, int Country, double Price, double Capacity)
             : Type(Type), countryOfOrigin(Country), manufacturerPrice(Price), engineCapacity(Capacity){}
 
-            
-            /*A virtual destructor ensures proper cleanup of derived class objects when deleted through
-            a base class pointer, preventing memory leaks and undefined behavior.*/
-            virtual ~Vehicle() = default;
-            virtual void getDetails() = 0;// Pure virtual function to ensure this class cannot be instantiated
+        virtual ~Vehicle() = default;
+        virtual void getDetails() = 0;
 
-            friend void Display(const Vehicle& vehicle);// Friend function to display user details
+        void setAreaType(int option) {
+            if (option == 1 || option == 2) {
+                areaType = option;
+            } else {
+                throw std::invalid_argument("Invalid option. Please choose 1 or 2.");
+            }
+        }
 
+        friend void Display(const Vehicle& vehicle);
 };
 
 #endif
